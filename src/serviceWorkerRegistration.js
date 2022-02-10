@@ -10,6 +10,8 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://cra.link/PWA
 
+import { serviceWorkerRegistrationEnhancements } from "./serviceWorkerRegistrationEnhancements";
+
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
@@ -30,7 +32,7 @@ export function register(config) {
     }
 
     window.addEventListener('load', () => {
-      const swUrl = `${process.env.PUBLIC_URL}/xp-service-worker.js`;
+      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
 
 
       if (isLocalhost) {
@@ -49,6 +51,7 @@ export function register(config) {
         // Is not localhost. Just register service worker
 
         registerValidSW(swUrl, config);
+        serviceWorkerRegistrationEnhancements(config);
       }
     });
   }
