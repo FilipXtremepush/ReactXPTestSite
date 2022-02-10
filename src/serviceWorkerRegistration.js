@@ -10,10 +10,6 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://cra.link/PWA
 
-import { useLocation } from 'react-router-dom';
-
-const location = useLocation();
-
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
@@ -74,7 +70,7 @@ function registerValidSW(swUrl, config) {
               // but the previous service worker will still serve the older
               // content until all client tabs are closed.
              decodeURIComponent(
-                  location.search.substring(location.search.indexOf('ref=')+4)
+                  window.location.search.substring(window.location.search.indexOf('ref=')+4)
              );
 
               console.log(
