@@ -13,9 +13,7 @@ import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 
-importScripts(decodeURIComponent(
-    location.search.substring(location.search.indexOf('ref=')+4)
-));
+
 
 clientsClaim();
 
